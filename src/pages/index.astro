@@ -6,13 +6,13 @@ import '../styles/global.css';
 
 // data source
 
-const source = 'https://api.thecatapi.com/v1/images/search?limit=10';
+const source = 'https://strangerthings-quotes.vercel.app/api/quotes/50';
 // fetch the data
 const res = await fetch(source); 
 // store retreived data
 const data = await res.json();
 
-const siteName = 'CATS';
+const siteName = 'Stranger Things Quotes';
 ---
 
 <html lang="en">
@@ -30,7 +30,7 @@ const siteName = 'CATS';
 	<body>
 		
 		<header class="masthead">
-			<h1 class="site-title">CATS</h1>
+			<h1 class="site-title">Stranger Things Quotes</h1>
 		</header>
 
 		<main id="content" class="main-area">
@@ -39,8 +39,9 @@ const siteName = 'CATS';
 		  
 				<!-- Your API Data -->
 				{
-					data.map (cat => 
-					<img src={cat.url} width={cat.url}/>
+					data.map (data => 
+					<p>{data.quote}</p>
+					
 				
 				)
 				}
